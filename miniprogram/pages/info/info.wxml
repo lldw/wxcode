@@ -1,0 +1,81 @@
+<view class="info">
+  <text>发布信息</text>
+</view>
+<form bindsubmit="subBtn">
+  <view class="section">
+    <view class="section__title">发布类型</view>
+    <picker bindchange="bindPickerChange" value="{{idx}}" range="{{array}}" mode="selector" name="releaseType">
+      <view class="picker">
+        {{array[idx]}}
+      </view>
+    </picker>
+  </view>
+  <view class="section">
+    <view class="section__title">物品类型</view>
+    <picker bindchange="bindPickerChanges" value="{{index}}" range="{{tArray}}" mode="selector" name="itemType">
+      <view class="picker">
+        {{tArray[index]}}
+      </view>
+    </picker>
+  </view>
+
+
+  <!-- 物品描述 -->
+  <view class="describe">
+    <view style="display: inline-block;" class="mleft">物品描述</view>
+    <textarea class="txt" placeholder="{{placeholder}}" name="ItemDescription"></textarea>
+    <!-- 上传图片 -->
+    <view class="weui-uploader">
+      <view class="imglist">
+        <block wx:for="{{urlArr}}" wx:key="*this">
+          <view class="imglist_item">
+            <image class="imglist_item" src="{{item}}" name="img"></image>
+          </view>
+        </block>
+        <block wx:if="{{urlArr.length >= 1 ? false :true}}">
+          <view class="img-box" bindtap="upFile">
+            <text class="cen">+</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+  </view>
+  <!-- 详细信息 -->
+
+
+  <view class="info">
+    <text>详细信息</text>
+  </view>
+  <view class="section">
+    <view class="mleft">
+      <view wx:if="{{idx==0}}">丢失地点
+        <input placeholder="请输入丢失地点" type="text" class="ipt" name="location" />
+      </view>
+      <view wx:if="{{idx==1}}">拾取地点
+        <input placeholder="请输入拾取地点" type="text" class="ipt" name="location" />
+      </view>
+    </view>
+  </view>
+  <view class="section">
+    <view class="mleft">联系人
+      <input placeholder="请输入联系信息" type="text" class="ipt" name="contacts" />
+    </view>
+  </view>
+
+  <!-- 日期时间选择器 -->
+  <view class="section">
+    <view class="section__title">日期选择</view>
+    <picker bindchange="bindDateChange" value="{{date}}" mode="date" start="1900-01-01" end="2099-01-01"
+      name="posttime">
+      <view class="t_date">
+        {{date}}
+        <image src="../../image/right.png" class="right" mode="widthFix"></image>
+      </view>
+    </picker>
+  </view>
+
+  <view class="btn-info">
+    <button type="primary" form-type="submit" bindtap="toIndex">发布信息</button>
+  </view>
+</form>

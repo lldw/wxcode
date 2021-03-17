@@ -1,0 +1,68 @@
+<view class="all">
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:change="onChange" bind:search="onSearch">
+    <view slot="action" bind:tap="onClick">搜索</view>
+  </van-search>
+  <van-notice-bar left-icon="volume-o" scrollable text="请联系管理员！请联系管理员" />
+  <!-- 轮播图 -->
+  <swiper autoplay indicator-dots class="pic">
+    <swiper-item>
+      <image></image>
+    </swiper-item>
+    <swiper-item>
+      <image></image>
+    </swiper-item>
+    <swiper-item>
+      <image></image>
+    </swiper-item>
+  </swiper>
+
+  <van-tabs swipeable animated bind:click="getData" >
+    <van-tab title="失物">
+      <block wx:for="{{indexData}}" wx:key="*this">
+        <view class="panel">
+          <image src="https://img.yzcdn.cn/vant/cat.jpeg" class="img"></image>
+          <view class="pos">
+            <view>{{item.name}}</view>
+            <text>{{item.time}}</text>
+          </view>
+          <view class="pan-right">
+            <view class="right-txt">{{item.item_type=='0'?'失物':'招领'}}</view>
+          </view>
+          <!-- 内容 -->
+          <view class="pan-bottom">
+            <view class="bot-txt">{{item.contacts}}</view>
+            <view>
+                <image class="bot-img" src="{{item.img}}" mode="scaleToFill"></image>
+            </view>
+          </view>
+          <!-- 功能区 -->
+          <view class="funarea">
+            <van-row>
+              <van-col span="8">
+                <van-icon name="eye-o" size="40rpx" bind:click="" />
+                <view class="tips">360</view>
+              </van-col>
+              <van-col span="8">
+                <van-icon name="chat-o" size="40rpx" />
+                <view class="tips">评论</view>
+              </van-col>
+              <van-col span="8">
+                <van-icon name="share-o" size="40rpx" />
+                <view class="tips">转发</view>
+              </van-col>
+            </van-row>
+          </view>
+        </view>
+      </block>
+
+    </van-tab>
+    <van-tab title="招领"></van-tab>
+  </van-tabs>
+
+  <navigator url='/pages/info/info' hover-stay-time="100">
+    <view class="round-click">
+      发布
+    </view>
+  </navigator>
+
+</view>

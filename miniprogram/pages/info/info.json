@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-uploader": "../../miniprogram_npm/@vant/weapp/uploader/index"
+  },
+  "navigationBarBackgroundColor": "#00cc99",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "发布信息",
+  "backgroundColor": "#eeeeee"
+}
