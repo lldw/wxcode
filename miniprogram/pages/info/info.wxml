@@ -4,7 +4,7 @@
 <form bindsubmit="subBtn">
   <view class="section">
     <view class="section__title">发布类型</view>
-    <picker bindchange="bindPickerChange" value="{{idx}}" range="{{array}}" mode="selector" name="releaseType">
+    <picker data-id="{{idx}}" bindchange="bindPickerChange" value="{{idx}}" range="{{array}}" mode="selector" name="releaseType">
       <view class="picker">
         {{array[idx]}}
       </view>
@@ -76,6 +76,6 @@
   </view>
 
   <view class="btn-info">
-    <button type="primary" form-type="submit" bindtap="toIndex">发布信息</button>
+    <button type="primary" form-type="submit">发布信息</button>
   </view>
 </form>

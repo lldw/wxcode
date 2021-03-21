@@ -3,7 +3,8 @@ var util = require('../../util/time');
 const db = wx.cloud.database();
 var urlArr = [];
 var filePath = [];
-var img_path ="";
+var img_path = "";
+var idx =0;
 
 Page({
   /**
@@ -68,7 +69,7 @@ Page({
   cloudFile(filename, path) {
     wx.showLoading({
       title: '图片上传中...',
-      mask:true
+      mask: true
     })
     wx.cloud.uploadFile({
       cloudPath: filename + ".jpg",
@@ -85,31 +86,48 @@ Page({
       img_path = res.fileID
       wx.hideLoading()
     })
-  
+
   },
   subBtn(res) {
     var {
-      ItemDescription,
+      //物品描述
+      ItemDescription,   
+      // 联系人
       contacts,
+      // 物品类型
       itemType,
+      // 丢失地点
       location,
+      // 丢失时间
       posttime,
+      // 发布类型
       releaseType,
     } = res.detail.value;
-    db.collection('w_lookfor').add({
-      data: {
-        Item_description: ItemDescription,
-        contacts: contacts,
-        item_type: itemType,
-        location: location,
-        posttime: posttime,
-        release_type: releaseType,
-        img:img_path
-      }
-    }).then(res => {
-      // flag = 1;
+    // 如果物品描述 、丢失地点、联系人 不为空可以保存跳转
+    if (ItemDescription && contacts  && location ) {
+      db.collection('w_lookfor').add({
+        data: {
+          Item_description: ItemDescription,
+          contacts: contacts,
+          item_type: itemType,
+          location: location,
+          posttime: posttime,
+          release_type: releaseType,
+          img: img_path,
+          // time:util.formatTime(new Date())
+        }
+      }).then(res => {
+        // flag = 1;
+        console.log(res)
+      })
+      this.toIndex()
+    }else{
       console.log(res)
-    })
+      wx.showToast({
+        title: '所有信息为必输项',
+        icon:'error'
+      })
+    }
   },
 
 
@@ -125,18 +143,18 @@ Page({
 
   // 发布类型选择
   bindPickerChange: function (e) {
-    var idx = 0;
     this.setData({
       idx: e.detail.value,
     })
-    console.log(idx)
   },
   bindPickerChanges: function (e) {
+    console.log(e);
     this.setData({
       index: e.detail.value
     })
   },
   bindDateChange: function (e) {
+    console.log(e);
     this.setData({
       date: e.detail.value
     })
@@ -149,7 +167,7 @@ Page({
     })
     wx.redirectTo({
       url: "../index/index",
-    })
+    });
   },
   /**
    * 生命周期函数--监听页面加载

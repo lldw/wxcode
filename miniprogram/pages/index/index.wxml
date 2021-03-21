@@ -16,47 +16,84 @@
     </swiper-item>
   </swiper>
 
-  <van-tabs swipeable animated bind:click="getData" >
-    <van-tab title="失物">
-      <block wx:for="{{indexData}}" wx:key="*this">
-        <view class="panel">
-          <image src="https://img.yzcdn.cn/vant/cat.jpeg" class="img"></image>
-          <view class="pos">
-            <view>{{item.name}}</view>
-            <text>{{item.time}}</text>
-          </view>
-          <view class="pan-right">
-            <view class="right-txt">{{item.item_type=='0'?'失物':'招领'}}</view>
-          </view>
-          <!-- 内容 -->
-          <view class="pan-bottom">
-            <view class="bot-txt">{{item.contacts}}</view>
-            <view>
+  <van-tabs swipeable animated>
+      <van-tab title="失物">
+        <block wx:for="{{lostData}}" wx:key="*this">
+          <view class="panel">
+            <image src="https://img.yzcdn.cn/vant/cat.jpeg" class="img"></image>
+            <view class="pos">
+              <view>{{item.name}}</view>
+              <text>{{item.time}}</text>
+            </view>
+            <view class="pan-right">
+              <view class="right-txt">{{item.item_type=='0'?'失物':'招领'}}</view>
+            </view>
+            <!-- 内容 -->
+            <view class="pan-bottom">
+              <view class="bot-txt">{{item.Item_description}}</view>
+              <view>
                 <image class="bot-img" src="{{item.img}}" mode="scaleToFill"></image>
+              </view>
+            </view>
+            <!-- 功能区 -->
+            <view class="funarea">
+              <van-row>
+                <van-col span="8">
+                  <van-icon name="eye-o" size="40rpx" bind:click="" />
+                  <view class="tips">360</view>
+                </van-col>
+                <van-col span="8">
+                  <van-icon name="chat-o" size="40rpx" />
+                  <view class="tips">评论</view>
+                </van-col>
+                <van-col span="8">
+                  <van-icon name="share-o" size="40rpx" />
+                  <view class="tips">转发</view>
+                </van-col>
+              </van-row>
             </view>
           </view>
-          <!-- 功能区 -->
-          <view class="funarea">
-            <van-row>
-              <van-col span="8">
-                <van-icon name="eye-o" size="40rpx" bind:click="" />
-                <view class="tips">360</view>
-              </van-col>
-              <van-col span="8">
-                <van-icon name="chat-o" size="40rpx" />
-                <view class="tips">评论</view>
-              </van-col>
-              <van-col span="8">
-                <van-icon name="share-o" size="40rpx" />
-                <view class="tips">转发</view>
-              </van-col>
-            </van-row>
-          </view>
-        </view>
-      </block>
+        </block>
+      </van-tab>
 
+    <van-tab title="招领">
+        <block wx:for="{{findData}}" wx:key="*this">
+          <view class="panel">
+            <image src="https://img.yzcdn.cn/vant/cat.jpeg" class="img"></image>
+            <view class="pos">
+              <view>{{item.name}}</view>
+              <text>{{item.time}}</text>
+            </view>
+            <view class="pan-right">
+              <view class="right-txt">{{item.item_type=='0'?'失物':'招领'}}</view>
+            </view>
+            <!-- 内容 -->
+            <view class="pan-bottom">
+              <view class="bot-txt">{{item.Item_description}}</view>
+              <view>
+                <image class="bot-img" src="{{item.img}}" mode="scaleToFill"></image>
+              </view>
+            </view>
+            <!-- 功能区 -->
+            <view class="funarea">
+              <van-row>
+                <van-col span="8">
+                  <van-icon name="eye-o" size="40rpx" bind:click="" />
+                  <view class="tips">360</view>
+                </van-col>
+                <van-col span="8">
+                  <van-icon name="chat-o" size="40rpx" />
+                  <view class="tips">评论</view>
+                </van-col>
+                <van-col span="8">
+                  <van-icon name="share-o" size="40rpx" />
+                  <view class="tips">转发</view>
+                </van-col>
+              </van-row>
+            </view>
+          </view>
+        </block>
     </van-tab>
-    <van-tab title="招领"></van-tab>
   </van-tabs>
 
   <navigator url='/pages/info/info' hover-stay-time="100">
