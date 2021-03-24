@@ -1,0 +1,12 @@
+.heng_line {
+  width: 100%;
+  border-top: 1rpx solid #cccccc;
+  margin-top: 20rpx;
+}
+
+
+.history_search{
+  font-size:35rpx;
+  margin-top: 20rpx;
+  margin-left:20rpx
+}

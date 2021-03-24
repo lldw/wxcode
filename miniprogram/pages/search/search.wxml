@@ -1,0 +1,14 @@
+
+<!-- 顶部搜索 -->
+<van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot >
+  <view slot="action" bind:tap="onClick">搜索</view>
+</van-search>
+<!-- 横线 -->
+<view class="heng_line"></view>
+
+<!-- 历史搜索 -->
+<view class="history_search">
+  <text>历史搜索</text>
+</view>
+
+

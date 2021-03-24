@@ -1,105 +1,88 @@
 <view class="all">
-  <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:change="onChange" bind:search="onSearch">
-    <view slot="action" bind:tap="onClick">搜索</view>
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bindtap="toSearch">
   </van-search>
-  <van-notice-bar left-icon="volume-o" scrollable text="请联系管理员！请联系管理员" />
+  <!-- <van-notice-bar left-icon="volume-o" scrollable text="请联系管理员！请联系管理员" /> -->
+
   <!-- 轮播图 -->
   <swiper autoplay indicator-dots class="pic">
-    <swiper-item>
-      <image></image>
-    </swiper-item>
-    <swiper-item>
-      <image></image>
-    </swiper-item>
-    <swiper-item>
-      <image></image>
-    </swiper-item>
+    <block wx:for="{{banner}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.src}}" mode="heightFix"></image>
+      </swiper-item>
+    </block>
   </swiper>
 
+  <!-- 公告 -->
+  <view class="notice">
+    <view class="notice_2">
+      公告
+    </view>
+    <swiper autoplay="true" vertical circular class="notice_1">
+      <swiper-item class="notice_1">
+        <view>111111111111</view>
+      </swiper-item>
+      <swiper-item class="notice_1">
+        <view>2222222222</view>
+      </swiper-item>
+    </swiper>
+  </view>
+
   <van-tabs swipeable animated>
-      <van-tab title="失物">
-        <block wx:for="{{lostData}}" wx:key="*this">
-          <view class="panel">
-            <image src="https://img.yzcdn.cn/vant/cat.jpeg" class="img"></image>
-            <view class="pos">
-              <view>{{item.name}}</view>
-              <text>{{item.time}}</text>
-            </view>
-            <view class="pan-right">
-              <view class="right-txt">{{item.item_type=='0'?'失物':'招领'}}</view>
-            </view>
-            <!-- 内容 -->
-            <view class="pan-bottom">
-              <view class="bot-txt">{{item.Item_description}}</view>
-              <view>
-                <image class="bot-img" src="{{item.img}}" mode="scaleToFill"></image>
-              </view>
-            </view>
-            <!-- 功能区 -->
-            <view class="funarea">
-              <van-row>
-                <van-col span="8">
-                  <van-icon name="eye-o" size="40rpx" bind:click="" />
-                  <view class="tips">360</view>
-                </van-col>
-                <van-col span="8">
-                  <van-icon name="chat-o" size="40rpx" />
-                  <view class="tips">评论</view>
-                </van-col>
-                <van-col span="8">
-                  <van-icon name="share-o" size="40rpx" />
-                  <view class="tips">转发</view>
-                </van-col>
-              </van-row>
+    <van-tab title="失物">
+      <!--内容列表 -->
+      <block wx:for="{{lostData}}">
+        <view class="content_list">
+          <!-- 列表图片信息 -->
+          <view class="list_picture">
+            <!-- 图片信息 -->
+            <view class="picture_information">
+              <image class="picture_1" src="{{item.img}}">
+              </image>
             </view>
           </view>
-        </block>
-      </van-tab>
+          <!-- 列表物品信息 -->
+          <view class="item_information">
+            <view class="item_title">
+              <view class="loss_type">{{objectArray[index].name}}</view>
+              <view class="item_name"> {{objecttArray[index].name}} </view>
+            </view>
+            <view class="time_and_place">
+              <view class="lost_time">时间：{{item.posttime}} </view>
+              <view class="lost_location">地点：{{item.location}} </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </van-tab>
 
     <van-tab title="招领">
-        <block wx:for="{{findData}}" wx:key="*this">
-          <view class="panel">
-            <image src="https://img.yzcdn.cn/vant/cat.jpeg" class="img"></image>
-            <view class="pos">
-              <view>{{item.name}}</view>
-              <text>{{item.time}}</text>
-            </view>
-            <view class="pan-right">
-              <view class="right-txt">{{item.item_type=='0'?'失物':'招领'}}</view>
-            </view>
-            <!-- 内容 -->
-            <view class="pan-bottom">
-              <view class="bot-txt">{{item.Item_description}}</view>
-              <view>
-                <image class="bot-img" src="{{item.img}}" mode="scaleToFill"></image>
-              </view>
-            </view>
-            <!-- 功能区 -->
-            <view class="funarea">
-              <van-row>
-                <van-col span="8">
-                  <van-icon name="eye-o" size="40rpx" bind:click="" />
-                  <view class="tips">360</view>
-                </van-col>
-                <van-col span="8">
-                  <van-icon name="chat-o" size="40rpx" />
-                  <view class="tips">评论</view>
-                </van-col>
-                <van-col span="8">
-                  <van-icon name="share-o" size="40rpx" />
-                  <view class="tips">转发</view>
-                </van-col>
-              </van-row>
+      <block wx:for="{{findData}}">
+        <view class="content_list">
+          <!-- 列表图片信息 -->
+          <view class="list_picture">
+            <!-- 图片信息 -->
+            <view class="picture_information">
+              <image class="picture_1" src="{{item.img}}">
+              </image>
             </view>
           </view>
-        </block>
+          <!-- 列表物品信息 -->
+          <view class="item_information">
+            <view class="item_title">
+              <view class="loss_type">{{objectArray[index].name}}</view>
+              <view class="item_name"> {{objecttArray[index].name}} </view>
+            </view>
+            <view class="time_and_place">
+              <view class="lost_time">时间：{{item.posttime}} </view>
+              <view class="lost_location">地点：{{item.location}} </view>
+            </view>
+          </view>
+        </view>
+      </block>
     </van-tab>
   </van-tabs>
 
   <navigator url='/pages/info/info' hover-stay-time="100">
-    <view class="round-click">
-      发布
-    </view>
+    <view class="round-click">发布</view>
   </navigator>
-
 </view>

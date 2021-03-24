@@ -1,10 +1,8 @@
 {
-  "usingComponents": {
-
-  },
+  "usingComponents": {},
   "navigationBarBackgroundColor": "#00cc99",
   "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "失物招领",
+  "navigationBarTitleText": "搜索",
   "backgroundColor": "#eeeeee",
-  "enablePullDownRefresh":true
+  "enablePullDownRefresh": true
 }

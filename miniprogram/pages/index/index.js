@@ -6,12 +6,41 @@ Page({
   data: {
     dataList: [],
     lostData: [],
-    findData: []
+    findData: [],
+    objecttArray: [{
+      id: 0,
+      name: '手机'
+    },   
+     {
+      id: 1,
+      name: '背包'
+    },
+    {
+      id: 2,
+      name: '手表'
+    },
+    {
+      id: 3,
+      name: '书'
+    },
+    {
+      id: 4,
+      name: '篮球'
+    },],
+    objectArray:[{
+      id: 0,
+      name: '失物'
+    },
+    {
+      id: 1,
+      name: '招领'
+    }],
   },
-  onChange(e) {
-    this.setData({
-      value: e.detail,
-    });
+// 跳转搜索
+  toSearch() {
+   wx.navigateTo({
+     url: '../search/search',
+   })
   },
   onSearch() {
     Toast('搜索' + this.data.value);
@@ -23,13 +52,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    db.collection("banner").get().then(res => {
+      this.setData({
+        banner: res.data
+      })
+      console.log(res.data);
+    })
+    // 首页数据获取
     db.collection("w_lookfor").where({
       item_type: 0
     }).limit(5).get().then(res => {
       this.setData({
         lostData: res.data
       })
-      console.log(res)
     });
     db.collection("w_lookfor").where({
       item_type: 1
@@ -37,7 +72,6 @@ Page({
       this.setData({
         findData: res.data
       })
-      console.log(res)
     });
   },
   /**
@@ -66,7 +100,7 @@ Page({
       this.setData({
         findData: res.data
       })
-      console.log(res)
+      console.log(res.data)
     });
     db.collection("w_lookfor").where({
       item_type: 0
@@ -77,23 +111,7 @@ Page({
       console.log(res)
     });
   },
-  // 下拉数据刷新
-  // loadRead(num, page) {
-  //   wx.cloud.callFunction({
-  //     name: "loadRead",
-  //     data: {
-  //       num: num,
-  //       page: page
-  //     }
-  //   }).then(res => {
-  //     var oldData = this.data.lostData
-  //     var newData = oldData.concat(res.result.data)
-  //     this.setData({
-  //       lostData: newData
-  //     })
-  //   })
-  // },
-
+ 
   /**
    * 页面上拉触底事件的处理函数
    */
