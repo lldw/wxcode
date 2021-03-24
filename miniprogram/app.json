@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/info/info",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/my/my"
   ],
   "usingComponents": {
     "van-search": "miniprogram_npm/@vant/weapp/search/index",
@@ -24,5 +25,20 @@
     "navigationBarTitleText": "云",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+"list": [{
+  "pagePath": "pages/index/index",
+  "text": "首页",
+  "selectedIconPath": "/image/s-index.png",
+  "iconPath": "/image/index.png"
+},{
+  "pagePath": "pages/my/my",
+  "text": "我的",
+  "selectedIconPath": "/image/s-my.png",
+  "iconPath": "image/my.png"
+}
+]
+
+  }
 }
