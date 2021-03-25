@@ -1,0 +1,56 @@
+.wx_img {
+  width: 92%;
+  height: 300rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wx_img_1 {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: 1rpx solid #ccc;
+}
+
+.wx_txt {
+  margin-top: 20rpx;
+}
+
+.modify {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  margin: 30rpx 0rpx;
+  text-align: right;
+}
+
+.modify input {
+  width: 480rpx;
+}
+
+.heng_line {
+  border-top: 1rpx solid #cccccc;
+}
+
+/* 时间选择器 */
+
+.arrow{
+  display: inline-block;
+  margin-left: 20rpx;
+}
+.picker_data {
+  display: inline-block;
+  width: 180rpx;
+}
+
+.edit_btn_1{
+  margin-top: 120rpx;
+  width: 320rpx;
+  height: 80rpx;
+  background: #00DE9A;
+  line-height: 80rpx;
+}

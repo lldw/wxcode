@@ -6,7 +6,6 @@
   /* margin-top: 15rpx; */
   margin-bottom: 15rpx;
 }
-
 /* gonggao */
 .notice {
   height: 75rpx;
@@ -35,102 +34,11 @@
   font-size: 40rpx;
 }
 
-/* 头像 */
-.img {
-  margin: 20rpx;
-  margin-top: 40rpx;
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50%;
-}
-
-.panel {
-  height: 600rpx;
-  width: 93%;
-  margin: 0 auto;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
-  position: relative;
-  background: #fff;
-  border-radius: 20rpx;
-  box-shadow: 1rpx 1rpx 2rpx #ccc;
-}
-
-/* 图片右侧文字 */
-.panel text {
-  color: #9c9c9c;
-  font-size: 28rpx;
-}
-
-.pos {
-  position: absolute;
-  left: 145rpx;
-  top: 50rpx;
-}
-
-.pos view {
-  font-weight: bold;
-}
-
-.pan-right {
-  height: 45rpx;
-  width: 150rpx;
-  background: #ffdb2f;
-  border-radius: 10rpx;
-  position: absolute;
-  right: 30rpx;
-  top: 50rpx;
-
-}
-
-.right-txt {
-  text-align: center;
-  line-height: 45rpx;
-}
-
-/* 头像下侧内容 */
-.pan-bottom {
-  height: 60rpx;
-  position: relative;
-  padding-left: 20rpx;
-}
-
-.bot-txt {
-  margin-bottom: 20rpx;
-}
-
-.bot-img {
-  width: 250rpx;
-  height: 250rpx;
-  background: rgb(221, 221, 221);
-  border-radius: 25rpx;
-  position: absolute;
-  top: 75rpx;
-}
-
-/* 功能区 */
-.funarea {
-  width: 100%;
-  position: relative;
-  top: 290rpx;
-  left: 80rpx;
-}
-
-.tips {
-  display: inline-block;
-  font-size: 25rpx;
-  color: #676767;
-  position: absolute;
-  bottom: 10rpx;
-  margin-left: 10rpx;
-}
-
-
 /* 右下发布按钮 */
 .round-click {
   height: 120rpx;
   width: 120rpx;
-  background-color: #2ad950;
+  background-image: linear-gradient(#76EEC6,#4EEE94);
   border-radius: 100%;
   position: fixed;
   bottom: 120rpx;
@@ -145,9 +53,7 @@
   line-height: 120rpx;
 }
 
-
 /* 商品列表 */
-
 .content_list{
   width: 96%;
   height: 170rpx;
@@ -156,27 +62,22 @@
   margin: 0 auto;
   margin-top: 15rpx;
   margin-bottom: 15rpx;
+  border-radius: 20rpx;
+  box-shadow: 2rpx 2rpx 2rpx #ccc;
 }
 
-/* 列表图片 */
-/* .picture_information{
-  height: 150rpx;
-  width: 200rpx;
-  border:1px solid #ccc;
-  display: flex;
-  line-height: 150rpx;
-} */
 .picture_1{
   height: 170rpx;
   width: 200rpx;
   display: flex;
+  border-radius: 20rpx;
 }
 
 
 /* 列表物品信息 */
 .item_information{
   width: 520rpx;
-  border: 1rpx solid #ccc;
+  /* border: 1rpx solid #ccc; */
 }
 
 .item_title{
@@ -184,7 +85,6 @@
   flex-direction: row;
   align-items: center;
   align-self: center;
-  /* justify-content: space-between; */
   margin-top: 10rpx;
 }
 .item_name{

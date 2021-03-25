@@ -1,0 +1,59 @@
+<!-- wx信息 -->
+<view class="wx_img">
+  <image class="wx_img_1"></image>
+  <text class="wx_txt">Future</text>
+</view>
+<form bindsubmit="subEdit">
+<!-- 修改信息 -->
+<view class="edit_info">
+  <view class="modify">
+    <text>所属学院：</text>
+    <input type="text" name="college"/>
+    <view class="arrow"> > </view>
+  </view>
+  <view class="heng_line"></view>
+  <view class="modify">
+    <text>性别：</text>
+    <view class="sec_sex">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" name="sex">
+        <view class="picker_data">
+            {{array[index]}}
+        </view>
+        <view class="arrow"> > </view>
+      </picker> 
+    </view>
+  </view>
+  <view class="heng_line"></view>
+  <view class="modify">
+    <text>生日：</text>
+    <view class="sec_data">
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange" name="birthday">
+        <view class="picker_data">
+          {{date}}
+        </view>
+        <view class="arrow"> > </view>
+      </picker>
+    </view>
+
+  </view>
+  <view class="heng_line"></view>
+  <view class="modify">
+    <text>个性签名：</text>
+    <input type="text" name="autograph"/>
+    <view class="arrow"> > </view>
+  </view>
+  <view class="heng_line"></view>
+  <view class="modify">
+    <text>手机号：</text>
+    <input type="text" name="phone_number"/>
+    <view> > </view>
+  </view>
+  <view class="heng_line"></view>
+</view>
+<!-- 按钮 -->
+<view class="edit_btn">
+  <button class="edit_btn_1" form-type="submit">提交</button>
+</view>
+</form>
+
+

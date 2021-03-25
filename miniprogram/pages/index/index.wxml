@@ -1,7 +1,7 @@
 <view class="all">
   <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bindtap="toSearch">
   </van-search>
-  <!-- <van-notice-bar left-icon="volume-o" scrollable text="请联系管理员！请联系管理员" /> -->
+
 
   <!-- 轮播图 -->
   <swiper autoplay indicator-dots class="pic">
@@ -19,10 +19,10 @@
     </view>
     <swiper autoplay="true" vertical circular class="notice_1">
       <swiper-item class="notice_1">
-        <view>111111111111</view>
+        <view>好好学习，天天向上</view>
       </swiper-item>
       <swiper-item class="notice_1">
-        <view>2222222222</view>
+        <view>拾金不昧好少年</view>
       </swiper-item>
     </swiper>
   </view>

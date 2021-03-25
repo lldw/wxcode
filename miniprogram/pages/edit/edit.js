@@ -1,20 +1,39 @@
+// pages/edit/edit.js
 
+// 获取数据库连接
+const db = wx.cloud.database();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    array: ["男", "女"]
 
   },
+  // 普通选择器
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  // 时间选择器
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
+  },
 
-// 跳转编辑资料页面
-toEdit(){
-wx.navigateTo({
-  url: '../edit/edit',
-})
-},
-
+  // 提交修改信息
+  
+  subEdit() {
+    wx.cloud.callFunction({
+      name:
+    })
+    db.collection("edit_info").doc("")
+  },
   /**
    * 生命周期函数--监听页面加载
    */

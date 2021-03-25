@@ -1,4 +1,16 @@
 <!-- 头像信息 -->
 <view class="head_portrait">
+  <view class="head_img">
+    <image class="head_img_1"
+      src="cloud://lad-0gtkyy5bec445a75.6c61-lad-0gtkyy5bec445a75-1305144049/1616059794757_0.jpg"></image>
+  </view>
   
+  <view class="head_edit">
+    <view class="head_name">
+      张三张三张三张三
+    </view>
+    <view class="editing_materials" bindtap="toEdit">
+      编辑资料 >
+    </view>
+  </view>
 </view>

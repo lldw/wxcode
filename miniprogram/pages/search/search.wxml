@@ -11,4 +11,28 @@
   <text>历史搜索</text>
 </view>
 
+<block>
+        <view class="content_list">
+          <!-- 列表图片信息 -->
+          <view class="list_picture">
+            <!-- 图片信息 -->
+            <view class="picture_information">
+              <image class="picture_1" src="cloud://lad-0gtkyy5bec445a75.6c61-lad-0gtkyy5bec445a75-1305144049/1616059794757_0.jpg">
+              </image>
+            </view>
+          </view>
+          <!-- 列表物品信息 -->
+          <view class="item_information">
+            <view class="item_title">
+              <view class="loss_type">{{objectArray[index].name}}</view>
+              <view class="item_name"> {{objecttArray[index].name}} </view>
+            </view>
+            <view class="time_and_place">
+              <view class="lost_time">时间：{{item.posttime}} </view>
+              <view class="lost_location">地点：{{item.location}} </view>
+            </view>
+          </view>
+        </view>
+      </block>
+
 
