@@ -29,3 +29,21 @@
  padding: 45rpx;
  color: #fff;
 }
+/* 获取按钮 */
+.getBtn{
+  width: 320rpx;
+  height: 80rpx;
+  background: rgba(0, 0, 0, 0);
+  border: 1rpx solid #fff;
+  border-radius: 50rpx;
+  line-height: 80rpx;
+  color: #fff;
+ 
+}
+.getBtn_1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+}

@@ -29,10 +29,8 @@ Page({
   // 提交修改信息
   
   subEdit() {
-    wx.cloud.callFunction({
-      name:
-    })
-    db.collection("edit_info").doc("")
+
+   
   },
   /**
    * 生命周期函数--监听页面加载
