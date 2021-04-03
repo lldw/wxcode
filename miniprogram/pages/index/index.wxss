@@ -62,8 +62,6 @@
   margin: 0 auto;
   margin-top: 15rpx;
   margin-bottom: 15rpx;
-  border-radius: 20rpx;
-  box-shadow: 2rpx 2rpx 2rpx #ccc;
 }
 
 .picture_1{

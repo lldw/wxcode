@@ -1,7 +1,6 @@
 <view class="all">
-  <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bindtap="toSearch">
+  <van-search placeholder="请输入搜索关键词" use-action-slot bindtap="toSearch">
   </van-search>
-
 
   <!-- 轮播图 -->
   <swiper autoplay indicator-dots class="pic">
@@ -28,9 +27,9 @@
   </view>
 
   <van-tabs swipeable animated>
-    <van-tab title="失物">
+      <van-tab title="失物" >
       <!--内容列表 -->
-      <block wx:for="{{lostData}}">
+      <block wx:for="{{lostData}}" wx:key="index">
         <view class="content_list">
           <!-- 列表图片信息 -->
           <view class="list_picture">
@@ -43,8 +42,8 @@
           <!-- 列表物品信息 -->
           <view class="item_information">
             <view class="item_title">
-              <view class="loss_type">{{objectArray[index].name}}</view>
-              <view class="item_name"> {{objecttArray[index].name}} </view>
+              <view class="loss_type">{{objectArray[item.release_type].name}}</view>
+              <view class="item_name"> {{objecttArray[item.item_type].name}} </view>
             </view>
             <view class="time_and_place">
               <view class="lost_time">时间：{{item.posttime}} </view>
@@ -55,8 +54,8 @@
       </block>
     </van-tab>
 
-    <van-tab title="招领">
-      <block wx:for="{{findData}}">
+  <van-tab title="招领" >
+      <block wx:for="{{findData}}" wx:key="index">
         <view class="content_list">
           <!-- 列表图片信息 -->
           <view class="list_picture">
@@ -69,8 +68,8 @@
           <!-- 列表物品信息 -->
           <view class="item_information">
             <view class="item_title">
-              <view class="loss_type">{{objectArray[index].name}}</view>
-              <view class="item_name"> {{objecttArray[index].name}} </view>
+              <view class="loss_type">{{objectArray[item.release_type].name}}</view>
+              <view class="item_name"> {{objecttArray[item.item_type].name}} </view>
             </view>
             <view class="time_and_place">
               <view class="lost_time">时间：{{item.posttime}} </view>
@@ -80,8 +79,8 @@
         </view>
       </block>
     </van-tab>
+
   </van-tabs>
-
   <navigator url='/pages/info/info' hover-stay-time="100">
     <view class="round-click">发布</view>
   </navigator>

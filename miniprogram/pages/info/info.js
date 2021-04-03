@@ -144,13 +144,13 @@ Page({
   // 发布类型选择
   bindPickerChange: function (e) {
     this.setData({
-      idx: e.detail.value,
+      idx: Number(e.detail.value),
     })
   },
   bindPickerChanges: function (e) {
     console.log(e);
     this.setData({
-      index: e.detail.value
+      index: Number(e.detail.value)
     })
   },
   bindDateChange: function (e) {
@@ -165,7 +165,7 @@ Page({
     wx.showToast({
       title: '发布信息成功！',
     })
-    wx.redirectTo({
+    wx.switchTab({
       url: "../index/index",
     });
   },

@@ -42,37 +42,42 @@ Page({
      url: '../search/search',
    })
   },
-  onSearch() {
-    Toast('搜索' + this.data.value);
+  // 丢失数据查询
+  getLost(){
+  
   },
-  onClick() {
-    Toast('搜索' + this.data.value);
+  getFound(){
+   
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 轮播图
     db.collection("banner").get().then(res => {
       this.setData({
         banner: res.data
       })
-      console.log(res.data);
-    })
+    });
+
     // 首页数据获取
     db.collection("w_lookfor").where({
-      item_type: 0
-    }).limit(5).get().then(res => {
-      this.setData({
-        lostData: res.data
-      })
-    });
-    db.collection("w_lookfor").where({
-      item_type: 1
-    }).limit(5).get().then(res => {
+      release_type: 1
+    }).get().then(res => {
       this.setData({
         findData: res.data
       })
     });
+    db.collection("w_lookfor").where({
+      release_type: 0
+    }).get().then(res => {
+      this.setData({
+        lostData: res.data
+      })
+      console.log(res);
+    });
+  
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

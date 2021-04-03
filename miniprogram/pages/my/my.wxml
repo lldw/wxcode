@@ -23,5 +23,49 @@
       </view>
     </view>
   </block>
-
 </view>
+<!-- 浏览记录 -->
+
+  <view class="browsing_history">
+    <block wx:for="{{arr}}">
+    <view class="record">
+      <view class="record_text">{{item.text}}</view>
+      <view class="record_num">{{item.num}}</view>
+    </view>
+  </block>
+  </view>
+  <view class="centent">
+    <view class="centent_1">
+      <view>分享消息</view>
+      <image src="../../image/right.png" class="centent_img"></image>
+    </view>
+    <view class="centent_1">
+      <view>清空缓存</view>
+      <image src="../../image/right.png" class="centent_img"></image>
+    </view>
+    <view class="centent_1">
+      <view>意见发聩</view>
+      <image src="../../image/right.png" class="centent_img"></image>
+    </view>
+    <view class="centent_1">
+      <view>系统更新</view>
+      <image src="../../image/right.png" class="centent_img"></image>
+    </view>
+    <view class="centent_1">
+      <view>关于我们</view>
+      <image src="../../image/right.png" class="centent_img"></image>
+    </view>
+    <view class="centent_1">
+      <view>修改密码</view>
+      <image src="../../image/right.png" class="centent_img"></image>
+    </view>
+  </view>
+
+
+
+  <!-- 功能 -->
+  <view class="function">
+    <view class="fun_list">
+
+    </view>
+  </view>

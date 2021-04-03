@@ -5,6 +5,5 @@
   "navigationBarBackgroundColor": "#00FFE5",
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "失物招领",
-  "backgroundColor": "#eeeeee",
-  "enablePullDownRefresh":true
+  "backgroundColor": "#eeeeee"
 }

@@ -76,6 +76,6 @@
   </view>
 
   <view class="btn-info">
-    <button type="primary" form-type="submit">发布信息</button>
+    <button type="primary" form-type="submit" class="btn_color">发布信息</button>
   </view>
 </form>

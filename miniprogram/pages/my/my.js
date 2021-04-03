@@ -6,7 +6,21 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUseGetUserProfile: false
+    canIUseGetUserProfile: false,   
+    arr:[
+      {
+        text:'失物记录',
+        num:3
+      },
+      {
+        text:'招领记录',
+        num:0
+      },
+      {
+        text:'发现记录',
+        num:17
+      },
+    ]
   },
 
   // 跳转编辑资料页面

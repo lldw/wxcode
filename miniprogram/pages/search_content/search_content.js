@@ -1,54 +1,19 @@
-const db = wx.cloud.database();
-const _ = db.command;
+// pages/search_content/search_content.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    value: "",
-    sealist: {},
+    getList:[]
   },
 
-  onChange(e) {
-    this.setData({
-      value: e.detail
-    })
-  },
-  // 搜索功能
-  onClick() {
-    let that = this;
-    let key = this.data.value;
-
-    db.collection('w_lookfor').where(_.or([{
-        Item_description: db.RegExp({
-          regexp: '.*' + key,
-          options: 'i',
-        })
-      },
-      {
-        address: db.RegExp({
-          regexp: '.*' + key,
-          options: 'i',
-        })
-      }
-    ])).get({
-      success: res => {
-        that.data.sealist = res.data
-        wx.redirectTo({
-          url: "../search_content/search_content?list=" + JSON.stringify(that.data.sealist)
-        });
-      },
-      fail: err => {
-        console.log(err)
-      }
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.list);
+    this.data.getList = JSON.parse(options.list)
   },
 
   /**

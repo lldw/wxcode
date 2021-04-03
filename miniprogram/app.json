@@ -4,7 +4,8 @@
     "pages/info/info",
     "pages/search/search",
     "pages/my/my",
-    "pages/edit/edit"
+    "pages/edit/edit",
+    "pages/search_content/search_content"
   ],
   "usingComponents": {
     "van-search": "miniprogram_npm/@vant/weapp/search/index",
