@@ -1,0 +1,39 @@
+.details_img_1 {
+  width: 750rpx;
+  height: 490rpx;
+  border: 1rpx solid #ccc;
+}
+
+.details_text {
+  width: 92%;
+  margin:0 auto;
+}
+.details_text_1{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+  align-content: center;
+}
+.details_text_2{
+  font-size: 30rpx;
+  color: #ccc;
+}
+.line{
+  width: 100%;
+  border-top:1rpx solid;
+  margin-top: 30rpx;
+  color: #ccc;
+}
+.heng_line{
+  width: 100%;
+  border-top:1rpx solid;
+  margin-top: 30rpx;
+  color: #ccc;
+  position: absolute;
+  bottom: 80rpx;
+}
+.content{
+  width: 100%;
+  height: 335rpx;
+  margin-top: 20rpx;
+}

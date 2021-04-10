@@ -1,2 +1,28 @@
-<!--pages/search_content/search_content.wxml-->
-<text>pages/search_content/search_content.wxml</text>
+<view class="all">
+  <block wx:for="{{getList}}" wx:key="index">
+    <view class="content_list">
+      <!-- 列表图片信息 -->
+      <view class="list_picture">
+        <!-- 图片信息 -->
+        <view class="picture_information">
+          <image class="picture_1" src="{{item.img}}">
+          </image>
+        </view>
+      </view>
+      <!-- 列表物品信息 -->
+      <view class="item_information">
+        <view class="item_title">
+          <view class="loss_type">{{objectArray[item.release_type].name}}</view>
+          <view class="item_name"> {{objecttArray[item.item_type].name}} </view>
+        </view>
+        <view class="time_and_place">
+          <view class="lost_time">时间：{{item.posttime}} </view>
+          <view class="lost_location">地点：{{item.location}} </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view wx:if="{{getList == null || getList == ''}}">
+  <van-empty image="search" description="无相关物品" />
+</view>

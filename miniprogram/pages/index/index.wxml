@@ -1,9 +1,27 @@
-<view class="all">
+<!-- 授权 -->
+<view wx:if="{{isHide}}">
+    <view wx:if="{{canIUse}}" >
+        <view class='header'>
+            <image src='/images/wx_login.png'></image>
+        </view>
+ 
+        <view class='content'>
+            <view>申请获取以下权限</view>
+            <text>获得你的公开信息(昵称，头像等)</text>
+        </view>
+ 
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
+    </view>
+    <view wx:else>请升级微信版本</view>
+</view>
+
+<view class="all" wx:else>
   <van-search placeholder="请输入搜索关键词" use-action-slot bindtap="toSearch">
   </van-search>
-
   <!-- 轮播图 -->
-  <swiper autoplay indicator-dots class="pic">
+  <swiper autoplay indicator-dots class="pic" >
     <block wx:for="{{banner}}" wx:key="index">
       <swiper-item>
         <image src="{{item.src}}" mode="heightFix"></image>
@@ -29,8 +47,8 @@
   <van-tabs swipeable animated>
       <van-tab title="失物" >
       <!--内容列表 -->
-      <block wx:for="{{lostData}}" wx:key="index">
-        <view class="content_list">
+      <block wx:for="{{lostData}}" wx:key="index" >
+        <view class="content_list" bindtap="toDetail" data-id="{{item._id}}">
           <!-- 列表图片信息 -->
           <view class="list_picture">
             <!-- 图片信息 -->
@@ -56,7 +74,7 @@
 
   <van-tab title="招领" >
       <block wx:for="{{findData}}" wx:key="index">
-        <view class="content_list">
+        <view class="content_list" bindtap="toDetail" data-id="{{item._id}}">
           <!-- 列表图片信息 -->
           <view class="list_picture">
             <!-- 图片信息 -->
@@ -85,3 +103,8 @@
     <view class="round-click">发布</view>
   </navigator>
 </view>
+
+
+
+
+ 

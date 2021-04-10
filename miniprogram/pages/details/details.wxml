@@ -1,0 +1,25 @@
+<view class="all">
+<block wx:for="{{content_list}}" wx:key="index">
+    <!-- 详情图片 -->
+    <view class="details_img">
+      <image class="details_img_1" src="{{item.img}}"></image>
+    </view>
+    <view class="details_text">
+      <view class="details_text_1">
+        <view class="text">物品名称：</view>
+        <view class="details_text_2">{{item.item_type}}</view>
+      </view>
+      <view class="details_text_1">
+        <view class="text">丢失地点：</view>
+        <view class="details_text_2">{{item.location}}</view>
+      </view>
+      <view class="details_text_1">
+        <view class="text">丢失时间：</view>
+        <view class="details_text_2">{{item.posttime}}</view>
+      </view>
+      <view class="line"></view>
+      <view class="content">{{item.Item_description}}</view>
+    </view>
+</block>
+<view class="heng_line"></view>
+</view>

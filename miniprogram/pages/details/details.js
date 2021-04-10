@@ -1,53 +1,31 @@
-// pages/search_content/search_content.js
+// pages/details/details.js
+const db = wx.cloud.database();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    getList:[],
-    list:[],
-    objecttArray: [{
-      id: 0,
-      name: '手机'
-    },   
-     {
-      id: 1,
-      name: '背包'
-    },
-    {
-      id: 2,
-      name: '手表'
-    },
-    {
-      id: 3,
-      name: '书'
-    },
-    {
-      id: 4,
-      name: '篮球'
-    },],
-    objectArray:[{
-      id: 0,
-      name: '失物'
-    },
-    {
-      id: 1,
-      name: '招领'
-    }]
+    id: "",
+    content_list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that =this;
-    console.log(options.list);
-    // that.data.getList = JSON.parse(options.list)
+    var that = this;
     that.setData({
-      getList:(JSON.parse(options.list))
+      id: options.id
+    });
+    db.collection("w_lookfor").where({
+      _id: that.data.id
+    }).get().then(res => {
+      that.setData({
+        content_list: res.data
+      })
+      console.log(that.data.content_list);
     })
-    
   },
 
   /**

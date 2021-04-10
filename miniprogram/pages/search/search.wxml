@@ -1,6 +1,6 @@
 <!-- 顶部搜索 -->
 <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:change="onChange">
-  <view slot="action" bind:tap="onClick">搜索</view>
+  <view slot="action"  bindtap="setHistory" data-value="{{value}}">搜索</view>
 </van-search>
 <!-- 横线 -->
 <view class="heng_line"></view>
@@ -8,4 +8,17 @@
 <!-- 历史搜索 -->
 <view class="history_search">
   <text>历史搜索</text>
+  <view class="delete" bindtap="de_cache">
+    <image src="../../image/delete.png" class="delete_img"></image>
+  </view>
 </view>
+
+
+<!-- 缓存 -->
+<block wx:for="{{sercherStorage}}" wx:key="index">
+  <view class="cache" bindtap="onClick">
+    <view class="cache_1">
+      <view class="cache_text">{{item}}</view>
+    </view>
+  </view>
+</block>

@@ -4,7 +4,7 @@
   margin-top: 20rpx;
 }
 
-.content_list{
+.content_list {
   width: 96%;
   height: 170rpx;
   background: #fff;
@@ -15,52 +15,88 @@
   border-radius: 20rpx;
   box-shadow: 2rpx 2rpx 2rpx #ccc;
 }
-.history_search{
-  font-size:35rpx;
-  margin-top: 20rpx;
-  margin-left:20rpx
-}
-.picture_1{
+
+.picture_1 {
   height: 170rpx;
   width: 200rpx;
   display: flex;
   border-radius: 20rpx;
 }
 
-
 /* 列表物品信息 */
-.item_information{
+.item_information {
   width: 520rpx;
-  /* border: 1rpx solid #ccc; */
+  border: 1rpx solid #ccc;
 }
 
-.item_title{
+.item_title {
   display: flex;
   flex-direction: row;
   align-items: center;
   align-self: center;
   margin-top: 10rpx;
 }
-.item_name{
+
+.item_name {
   margin-left: 60rpx;
 }
 
-.loss_type{
+.loss_type {
   color: blueviolet;
   font-size: 30rpx;
   margin-left: 60rpx;
 }
 
-.item_name{
+.item_name {
   font-size: 30rpx;
   margin-right: 60rpx;
 }
-.time_and_place{
+
+.time_and_place {
   margin-top: 40rpx;
   margin-left: 60rpx;
   font-size: 25rpx;
-  color: #CCC; 
+  color: #CCC;
 }
-.lost_time{
+
+.lost_time {
   margin-bottom: 10rpx;
+}
+/* 历史搜索 */
+.history_search {
+  font-size: 35rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  display: flex;
+  justify-content:space-between ;
+}
+.cache {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  display: inline-block;
+}
+
+.cache_1 {
+  background: rgb(247, 247, 247);
+  display: inline-block;
+  height: 50rpx;
+  border-radius: 25rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.cache_text {
+  line-height: 50rpx;
+  font-size: 25rpx;
+}
+.delete{
+  width: 25rpx;
+  height: 35rpx;
+  margin-right: 20rpx;
+}
+.delete_img{
+  width: 25rpx;
+  height: 35rpx;
 }

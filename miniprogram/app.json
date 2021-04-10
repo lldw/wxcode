@@ -5,7 +5,8 @@
     "pages/search/search",
     "pages/my/my",
     "pages/edit/edit",
-    "pages/search_content/search_content"
+    "pages/search_content/search_content",
+    "pages/details/details"
   ],
   "usingComponents": {
     "van-search": "miniprogram_npm/@vant/weapp/search/index",
@@ -18,7 +19,8 @@
     "van-row": "miniprogram_npm/@vant/weapp/row/index",
     "van-col": "miniprogram_npm/@vant/weapp/col/index",
     "van-button": "miniprogram_npm/@vant/weapp/button/index",
-    "van-uploader": "miniprogram_npm/@vant/weapp/uploader/index"
+    "van-uploader": "miniprogram_npm/@vant/weapp/uploader/index",
+    "van-empty": "miniprogram_npm/@vant/weapp/empty/index"
   },
   "window": {
     "backgroundColor": "#F6F6F6",
