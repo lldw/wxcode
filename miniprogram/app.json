@@ -6,7 +6,8 @@
     "pages/my/my",
     "pages/edit/edit",
     "pages/search_content/search_content",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/author/author"
   ],
   "usingComponents": {
     "van-search": "miniprogram_npm/@vant/weapp/search/index",

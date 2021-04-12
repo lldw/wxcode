@@ -1,5 +1,6 @@
 var util = require('../../util/time');
 
+
 const db = wx.cloud.database();
 var urlArr = [];
 var filePath = [];
@@ -51,8 +52,6 @@ Page({
     count: 3,
     date: util.formatTime(new Date())
   },
-
-
   upFile() {
     wx.chooseImage({
       count: 1,
@@ -64,7 +63,6 @@ Page({
         })
       },
     })
-
   },
   cloudFile(filename, path) {
     wx.showLoading({
@@ -86,7 +84,6 @@ Page({
       img_path = res.fileID
       wx.hideLoading()
     })
-
   },
   subBtn(res) {
     var {
@@ -130,7 +127,6 @@ Page({
     }
   },
 
-
   // 上传前校验
   beforeRead(event) {
     const {
@@ -173,7 +169,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**

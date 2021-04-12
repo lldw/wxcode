@@ -1,8 +1,11 @@
 <!-- wx信息 -->
-<view class="wx_img">
-  <image class="wx_img_1"></image>
-  <text class="wx_txt">Future</text>
+<block wx:for="{{userInfo}}" wx:key="index">
+  <view class="wx_img">
+  <image class="wx_img_1" src="{{item.avatarUrl}}"></image>
+  <text class="wx_txt">{{item.nickName}}</text>
 </view>
+</block>
+
 <form bindsubmit="subEdit">
 <!-- 修改信息 -->
 <view class="edit_info">

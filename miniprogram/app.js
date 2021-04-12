@@ -9,11 +9,44 @@ App({
         //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
         //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
         //   如不填则使用默认环境（第一个创建的环境）
-        // env: 'my-env-id',
+        // env: 'lad-0gtkyy5bec445a75',
         traceUser: true,
       })
     }
+    this.globalData = { }
+    this.hasUserInfo()
+    wx.cloud.callFunction({
+      name: "login",
+      data: {},
+      success: (res) => {
+        this.globalData.openid = res.result.openid
+      }
+    })
+  },
+  setUserInfo(userInfo) {
+    this.globalData.userInfo = userInfo
+    console.log("app中的userinfo", this.globalData.userInfo);
+  },
 
-    this.globalData = {}
+  hasUserInfo: async function () {
+    console.log("app",this.globalData);
+    if (this.globalData.userInfo && this.globalData.userInfo.nickName && this.globalData.userInfo.avatarUrl)
+      return true
+    let res = await wx.cloud.database().collection('user')
+      .where({
+        _openid: this.globalData.openid
+      }).get().catch(err => {
+        console.log(err);
+      })
+    if (res && res.data[0]) {
+      this.globalData.userInfo = res.data
+      return true
+    } else {
+      wx.navigateTo({
+        url: '/pages/author/author'
+      })
+      return false
+    }
   }
+
 })

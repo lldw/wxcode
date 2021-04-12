@@ -1,71 +1,66 @@
 <!-- 头像信息 -->
-<view class="head_portrait">
-  <!-- 获取头像和昵称按钮 -->
-  <!-- <block wx:if="{{!hasUserInfo}}">
-    <view class="getBtn_1">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" class="getBtn"> 获取头像昵称 </button>
-    </view>
-  </block> -->
-  <block >
-    <view class="head_img">
-      <image src="{{userInfo.avatarUrl}}" mode="cover" class="head_img_1">
-      </image>
-    </view>
-    <!-- 判断显示个人信息 -->
-    <view class="judgment_display">
-      <view class="head_edit">
-        <view class="head_name">
-          <text>{{userInfo.nickName}}</text>
-        </view>
-        <view class="editing_materials" bindtap="toEdit">
-          编辑资料 >
-        </view>
+<block wx:for="{{userInfo}}" wx:key="index">
+  <view class="head_portrait">
+  <view class="head_img">
+    <image src="{{item.avatarUrl}}" mode="cover" class="head_img_1">
+    </image>
+  </view>
+  <!-- 判断显示个人信息 -->
+  <view class="judgment_display">
+    <view class="head_edit">
+      <view class="head_name">
+        <text>{{item.nickName}}</text>
+      </view>
+      <view class="editing_materials" bindtap="toEdit">
+        编辑资料 >
       </view>
     </view>
-  </block>
+  </view>
 </view>
+</block>
+
 <!-- 浏览记录 -->
 
-  <view class="browsing_history">
-    <block wx:for="{{arr}}">
+<view class="browsing_history">
+  <block wx:for="{{arr}}"  wx:key="index">
     <view class="record">
       <view class="record_text">{{item.text}}</view>
       <view class="record_num">{{item.num}}</view>
     </view>
   </block>
+</view>
+<view class="centent">
+  <view class="centent_1">
+    <view>分享消息</view>
+    <image src="../../image/right.png" class="centent_img"></image>
   </view>
-  <view class="centent">
-    <view class="centent_1">
-      <view>分享消息</view>
-      <image src="../../image/right.png" class="centent_img"></image>
-    </view>
-    <view class="centent_1">
-      <view>清空缓存</view>
-      <image src="../../image/right.png" class="centent_img"></image>
-    </view>
-    <view class="centent_1">
-      <view>意见发聩</view>
-      <image src="../../image/right.png" class="centent_img"></image>
-    </view>
-    <view class="centent_1">
-      <view>系统更新</view>
-      <image src="../../image/right.png" class="centent_img"></image>
-    </view>
-    <view class="centent_1">
-      <view>关于我们</view>
-      <image src="../../image/right.png" class="centent_img"></image>
-    </view>
-    <view class="centent_1">
-      <view>修改密码</view>
-      <image src="../../image/right.png" class="centent_img"></image>
-    </view>
+  <view class="centent_1">
+    <view>清空缓存</view>
+    <image src="../../image/right.png" class="centent_img"></image>
   </view>
-
-
-
-  <!-- 功能 -->
-  <view class="function">
-    <view class="fun_list">
-
-    </view>
+  <view class="centent_1">
+    <view>意见发聩</view>
+    <image src="../../image/right.png" class="centent_img"></image>
   </view>
+  <view class="centent_1">
+    <view>系统更新</view>
+    <image src="../../image/right.png" class="centent_img"></image>
+  </view>
+  <view class="centent_1">
+    <view>关于我们</view>
+    <image src="../../image/right.png" class="centent_img"></image>
+  </view>
+  <view class="centent_1">
+    <view>修改密码</view>
+    <image src="../../image/right.png" class="centent_img"></image>
+  </view>
+</view>
+
+
+
+<!-- 功能 -->
+<view class="function">
+  <view class="fun_list">
+
+  </view>
+</view>

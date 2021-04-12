@@ -6,34 +6,91 @@
 
 .details_text {
   width: 92%;
-  margin:0 auto;
+  margin: 0 auto;
 }
-.details_text_1{
+
+.details_text_1 {
   display: flex;
   flex-direction: row;
   margin-top: 10rpx;
   align-content: center;
 }
-.details_text_2{
+
+.details_text_2 {
   font-size: 30rpx;
   color: #ccc;
 }
-.line{
+
+.line {
   width: 100%;
-  border-top:1rpx solid;
+  border-top: 1rpx solid;
   margin-top: 30rpx;
   color: #ccc;
 }
-.heng_line{
+
+
+
+.content {
   width: 100%;
-  border-top:1rpx solid;
-  margin-top: 30rpx;
-  color: #ccc;
-  position: absolute;
-  bottom: 80rpx;
-}
-.content{
-  width: 100%;
-  height: 335rpx;
+  height: 200rpx;
   margin-top: 20rpx;
+}
+
+/* caozuo */
+.caozuo {
+  display: flex;
+  height: 90rpx;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  background: rgba(255, 255, 255, 1);
+  border-top: 1rpx solid #ccc;
+}
+
+
+.de_img {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 50rpx;
+}
+
+/* pinglun */
+.comment {
+  width: 100%;
+  height: auto;
+  margin-bottom: 100rpx;
+}
+
+.comment_1 {
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 60rpx;
+  margin-bottom: 10rpx;
+}
+
+.commentImg {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 10rpx;
+}
+
+.commentText {
+  display: inline-block;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}
+
+.commetConent {
+  width: auto;
+  height: auto;
+  font-size: 35rpx;
+  margin-left: 80rpx;
+  margin-right: 20rpx;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 }

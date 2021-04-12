@@ -1,6 +1,4 @@
-// pages/edit/edit.js
-
-// 获取数据库连接
+const app = getApp()
 const db = wx.cloud.database();
 Page({
 
@@ -27,16 +25,22 @@ Page({
   },
 
   // 提交修改信息
-  
   subEdit() {
 
-   
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    let openid = app.globalData.openid
+    db.collection("user").where({
+      _openid: openid
+    }).get().then(res => {
+      that.setData({
+        userInfo: res.data
+      })
+    })
   },
 
   /**

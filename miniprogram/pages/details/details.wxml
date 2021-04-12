@@ -1,5 +1,5 @@
 <view class="all">
-<block wx:for="{{content_list}}" wx:key="index">
+  <block wx:for="{{content_list}}" wx:key="index">
     <!-- 详情图片 -->
     <view class="details_img">
       <image class="details_img_1" src="{{item.img}}"></image>
@@ -20,6 +20,20 @@
       <view class="line"></view>
       <view class="content">{{item.Item_description}}</view>
     </view>
-</block>
-<view class="heng_line"></view>
+  </block>
+  <view class="caozuo">
+    <image class="de_img" src="{{shoucangUrl}}" bindtap="clickColl"></image>
+    <image class="de_img" src="{{dianzanUrl}}" bindtap="click_1"></image>
+    <image class="de_img" src="{{pinglunUrl}}"></image>
+  </view>
+  <view class="comment">
+    <view>用户评论</view>
+    <block wx:for="{{userInfo}}" wx:key="index">
+      <view class="comment_1">
+      <image class="commentImg" src="{{item.avatarUrl}}"></image>
+      <view class="commentText">{{item.nickName}}</view>
+    </view>
+    </block>
+    <view class="commetConent">1111111111111111111111111111111111</view>
+  </view>
 </view>
